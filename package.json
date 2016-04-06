@@ -1,0 +1,49 @@
+{
+  "name": "organizebetter",
+  "version": "0.0.1",
+  "description": "Generic list app in ReactJS (ES6) with Webpack",
+  "scripts": {
+    "start": "node server.js",
+    "build": "./node_modules/webpack/bin/webpack.js -p --config webpack.config.js --bail --buildFrags --buildSmApp",
+    "build-dev": "./node_modules/webpack/bin/webpack.js --progress --config webpack.config.js --buildApps --bail --watch",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tatarin0/organizebetter.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack"
+  ],
+  "author": "Tim Titeev (http://github.com/tatarin0)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tatarin0/organizebetter/issues"
+  },
+  "homepage": "https://github.com/tatarin0/organizebetter",
+  "devDependencies": {
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.6.2",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}

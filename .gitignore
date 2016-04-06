@@ -1,0 +1,24 @@
+#####################
+## OrganizeBetter
+#####################
+
+# exclude build files
+dist/*
+
+#exclude sublime files
+*.sublime-workspace
+*.sublime-project
+
+#exclude sass cache files
+*.scssc
+
+# UI testing and tooling artifacts
+node_modules*
+
+# exclude node/npm generated files
+npm-debug.log
+
+# OSX/Apple specific
+.DS_Store
+
+webpack.config.js
