@@ -9,7 +9,7 @@ class ProductsContainer extends Component {
   render() {
     const { products } = this.props
     return (
-      <ProductsList title="Products">
+      <ProductsList title="Items wanted">
         {products.map(product =>
           <ProductItem
             key={product.id}

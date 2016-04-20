@@ -5,7 +5,7 @@ import CartContainer from './CartContainer'
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <h2>React voting list</h2>
         <hr/>
         <ProductsContainer />
