@@ -1,5 +1,5 @@
-# OrganizeBetter
-Generic list app in ReactJS (ES6) with Webpack
+# React voting list
+Generic list app in ReactJS (ES6) with Webpack.
 
 ```
 npm install

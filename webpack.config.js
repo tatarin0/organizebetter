@@ -1,12 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/only-dev-server',
-    './src/index'
+    'webpack-hot-middleware/client',
+    './index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -14,13 +13,23 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: [ 'babel'],
+        exclude: /node_modules/,
+        include: __dirname
+      },
+      {
+        test: /\.json$/,
+        loaders: [ 'json' ],
+        exclude: /node_modules/,
+        include: __dirname
+      }
+    ]
   }
-};
+}
