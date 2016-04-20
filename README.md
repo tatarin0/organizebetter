@@ -1,5 +1,5 @@
 # OrganizeBetter
-Generic list app in ReactJS (ES6) with Webpack and Django Python.
+Generic list app in ReactJS (ES6) with Webpack
 
 ```
 npm install
