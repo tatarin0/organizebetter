@@ -6,16 +6,10 @@ export default class ProductItem extends Component {
     const { product } = this.props
 
     return (
-      <div style={{ marginBottom: 20 }} className="container">
+      <div style={{ marginBottom: 20 }} className="container product-item">
         <Product
           title={product.title}
           price={product.price} />
-        <button
-          className="btn"
-          onClick={this.props.onAddToCartClicked}
-          disabled={product.inventory > 0 ? '' : 'disabled'}>
-          {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-        </button>
       </div>
     )
   }
@@ -24,8 +18,6 @@ export default class ProductItem extends Component {
 ProductItem.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
-  }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+    price: PropTypes.number.isRequired
+  }).isRequired
 }

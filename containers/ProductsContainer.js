@@ -13,8 +13,7 @@ class ProductsContainer extends Component {
         {products.map(product =>
           <ProductItem
             key={product.id}
-            product={product}
-            onAddToCartClicked={() => this.props.addToCart(product.id)} />
+            product={product}/>
         )}
       </ProductsList>
     )

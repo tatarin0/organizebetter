@@ -25,6 +25,15 @@ module.exports = {
         include: __dirname
       },
       {
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+        include: __dirname
+      },
+      {
+        test: /\.(png|jpg)$/, 
+        loader: 'url-loader?limit=8192'
+      },
+      {
         test: /\.json$/,
         loaders: [ 'json' ],
         exclude: /node_modules/,
