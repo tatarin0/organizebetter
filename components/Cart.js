@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Product from './Product'
+import ListTree from './ListTree'
 
 export default class Cart extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Cart extends Component {
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
       products.map(product =>
-        <Product
+        <ListTree
           title={product.title}
           price={product.price}
           quantity={product.quantity}

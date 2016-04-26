@@ -1,15 +1,26 @@
 import React, { Component, PropTypes } from 'react'
-import Product from './Product'
+import ListTree from './ListTree'
 
 export default class ProductItem extends Component {
   render() {
-    const { product } = this.props
+    let data = {
+        root: {
+            title: 'im root',
+            price: this.props.price,
+            summary: 'this is summary parent',
+            location: 'kiss',
+            child: {
+              title: 'im child',
+              price: this.props.price,
+              summary: 'this is summary child',
+              location: 'orl'
+            }
+          }
+        }
 
     return (
       <div style={{ marginBottom: 20 }} className="container product-item">
-        <Product
-          title={product.title}
-          price={product.price} />
+        <ListTree data={ data } />
       </div>
     )
   }
