@@ -1,4 +1,4 @@
-# React voting list
+# React list
 Generic list app in ReactJS (ES6) with Webpack.
 
 ```
