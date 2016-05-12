@@ -1,7 +1,17 @@
 import React, { Component, PropTypes } from 'react'
-import ListTree from './ListTree'
+import Product from './Product'
 
 export default class Cart extends Component {
+  static propTypes = {
+    products: PropTypes.array,
+    total: PropTypes.string,
+    onCheckoutClicked: PropTypes.func
+  }
+  
+  constructor(props){
+    super(props)
+  }
+
   render() {
     const { products, total, onCheckoutClicked } = this.props
 
@@ -9,7 +19,7 @@ export default class Cart extends Component {
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
       products.map(product =>
-        <ListTree
+        <Product
           title={product.title}
           price={product.price}
           quantity={product.quantity}
@@ -29,10 +39,4 @@ export default class Cart extends Component {
       </div>
     )
   }
-}
-
-Cart.propTypes = {
-  products: PropTypes.array,
-  total: PropTypes.string,
-  onCheckoutClicked: PropTypes.func
 }

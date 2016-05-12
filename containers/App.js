@@ -11,7 +11,7 @@ export default class App extends Component {
       <NavHeader />
 
       <div className="container">
-        <h2>React voting list</h2>
+        <h2>React app</h2>
         <hr/>
         <ProductsContainer />
         <hr/>

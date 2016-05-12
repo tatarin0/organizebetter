@@ -4,7 +4,22 @@ import { checkout } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import Cart from '../components/Cart'
 
-class CartContainer extends Component {
+export default class CartContainer extends Component {
+  static propTypes = {
+    products: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      quantity: PropTypes.number.isRequired
+    })).isRequired,
+    total: PropTypes.string,
+    checkout: PropTypes.func.isRequired
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { products, total } = this.props
 
@@ -15,17 +30,6 @@ class CartContainer extends Component {
         onCheckoutClicked={() => this.props.checkout()} />
     )
   }
-}
-
-CartContainer.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    quantity: PropTypes.number.isRequired
-  })).isRequired,
-  total: PropTypes.string,
-  checkout: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {

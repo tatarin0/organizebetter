@@ -1,6 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class ProductsList extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+    title: PropTypes.string.isRequired
+  }
+
+  constructor(props) {
+    super(props);
+  }
+  
   render() {
     return (
       <div>
@@ -9,9 +18,4 @@ export default class ProductsList extends Component {
       </div>
     )
   }
-}
-
-ProductsList.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string.isRequired
 }
